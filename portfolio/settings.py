@@ -147,3 +147,5 @@ MEDIA_ROOT = BASE_DIR / 'media'
 MEDIA_URL = '/media/'
 
 USE_TZ = False
+
+AUTH_PROFILE_MODULE = 'accounts.UserProfile'
