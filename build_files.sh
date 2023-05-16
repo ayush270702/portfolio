@@ -1,2 +1,2 @@
 pip install -r requirements.txt 
-python3.9 manage.py collectststic
+python3.9 manage.py collectststic --noinput --clear
