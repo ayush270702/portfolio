@@ -5,7 +5,7 @@ from django.contrib.auth.models import User
 class Profile(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     phone = models.CharField(max_length=13, null=True, blank=True)
-    profile_img = models.ImageField(blank=True, upload_to='images', default='images/p1.jpeg')
+    profile_img = models.ImageField(blank=True, upload_to='media/images', default='images/p1.jpeg')
     about_me = models.CharField(max_length=500, null=True, blank=True)
     
     def __str__(self):
