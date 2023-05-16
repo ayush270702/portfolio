@@ -148,4 +148,4 @@ MEDIA_URL = '/media/'
 
 USE_TZ = False
 
-AUTH_PROFILE_MODULE = 'main.UserProfile'
+AUTH_PROFILE_MODULE = 'main.Profile'
