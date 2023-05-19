@@ -13,7 +13,7 @@ class Profile(models.Model):
     
  
 class Resume(models.Model):
-    resume = models.FileField(upload_to='resume/')   
+    resume = models.FileField(upload_to='resume')   
     
     
 class Education(models.Model):
