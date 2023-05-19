@@ -65,7 +65,7 @@ def download_resume(request):
     with open(path, 'rb') as f:
         response = HttpResponse(f.read(), content_type = 'application/pdf')
         response['Content-Length'] = os.path.getsize( path )
-        response['Content-Disposition'] = 'inline; filename=%s/' % "AyushShende_Resume" + '.PDF'
+        response['Content-Disposition'] = 'attachment; filename=%s/' % "AyushShende_Resume" + '.PDF'
         return response
     
     
