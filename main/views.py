@@ -60,11 +60,12 @@ def download_resume(request):
     resume = Resume.objects.get(pk=1).resume
     path = resume.path
     # path = str(settings.MEDIA_ROOT) + r'/resume'
-    wrapper = FileWrapper( open( path, "rb" ) )
-    content_type = mimetypes.guess_type( path )[0]
-    response = HttpResponse(wrapper, content_type = content_type)
-    response['Content-Length'] = os.path.getsize( path )
-    response['Content-Disposition'] = 'attachment; filename=%s/' % smart_str( os.path.basename( path ) )
-    return response
+    # wrapper = FileWrapper( open( path, "rb" ) )
+    # content_type = mimetypes.guess_type( path )[0]
+    with open(path, 'rb') as f:
+        response = HttpResponse(f.read(), content_type = 'application/pdf')
+        response['Content-Length'] = os.path.getsize( path )
+        response['Content-Disposition'] = 'inline; filename=%s/' % "AyushShende_Resume.pdf"
+        return response
     
     
