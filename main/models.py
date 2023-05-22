@@ -6,7 +6,7 @@ class Profile(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     phone = models.CharField(max_length=13, null=True, blank=True)
     profile_img = models.ImageField(blank=True, upload_to='images', default='images/p1.jpeg')
-    about_me = models.CharField(max_length=500, null=True, blank=True)
+    about_me = models.TextField(max_length=5000, null=True, blank=True)
     
     def __str__(self):
         return self.user.username
@@ -45,7 +45,7 @@ class Projects(models.Model):
     name = models.CharField(max_length=50, null=True, blank=True)
     description = models.TextField(max_length=200, null=True)
     image =  models.ImageField(upload_to='images/project', null=True, blank=True, verbose_name="image(300x400)")   
-    link = models.CharField(max_length=500, null=True, blank=True)
+    link = models.CharField(max_length=5000, null=True, blank=True)
     
     def __str__(self):
         return self.name
