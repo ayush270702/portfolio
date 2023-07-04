@@ -20,9 +20,9 @@ def home(request):
 
 
 def resume(request):
-    education = Education.objects.all()
-    skills = Skills.objects.all()
-    services = Services.objects.all()
+    education = Education.objects.all().order_by('pk')
+    skills = Skills.objects.all().order_by('pk')
+    services = Services.objects.all().order_by('pk')
     
     context = {
         'education':education,
