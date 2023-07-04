@@ -12,7 +12,7 @@ from .models import Profile, Resume, Education, Languages, Skills, Projects, Con
 
 
 def home(request):
-    profile = Profile.objects.get(pk=1)
+    profile = Profile.objects.all()[0]
     context = {
         'profile': profile
     }
@@ -57,7 +57,7 @@ def contact(request):
 
 
 def download_resume(request): 
-    resume = Resume.objects.get(pk=1).resume
+    resume = Resume.objects.all()[0].resume
     path = resume.path
     # path = str(settings.MEDIA_ROOT) + r'/resume'
     # wrapper = FileWrapper( open( path, "rb" ) )
