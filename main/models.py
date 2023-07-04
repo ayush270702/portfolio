@@ -7,6 +7,10 @@ class Profile(models.Model):
     phone = models.CharField(max_length=14, null=True, blank=True)
     profile_img = models.ImageField(blank=True, upload_to='images', default='images/p1.jpeg')
     about_me = models.TextField(max_length=5000, null=True, blank=True)
+    twitter = models.CharField(max_length=100, null=True, blank=True)
+    github = models.CharField(max_length=100, null=True, blank=True)
+    linkedin = models.CharField(max_length=100, null=True, blank=True)
+    
     
     def __str__(self):
         return self.user.username
