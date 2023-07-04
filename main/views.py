@@ -6,7 +6,7 @@ import os
 from wsgiref.util import FileWrapper
 from django.utils.encoding import smart_str
 
-from .models import Profile, Resume, Education, Languages, Skills, Projects, Contact
+from .models import Profile, Resume, Education, Services, Skills, Projects, Contact
 # Create your views here.
 
 
@@ -21,19 +21,19 @@ def home(request):
 
 def resume(request):
     education = Education.objects.all()
-    languages = Languages.objects.all()
     skills = Skills.objects.all()
+    services = Services.objects.all()
     
     context = {
         'education':education,
-        'languages':languages,
+        'services':services,
         'skills':skills
     }
     
     return render(request, 'main/resume.html', context)
 
 def projects(request):
-    projects = Projects.objects.all()
+    projects = Projects.objects.all().order_by('-pk')
     context = {
         'projects':projects
     }

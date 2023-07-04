@@ -6,8 +6,8 @@ from . import models
 admin.site.register(models.Profile)
 admin.site.register(models.Resume)
 admin.site.register(models.Education)
-admin.site.register(models.Languages)
 admin.site.register(models.Skills)
+admin.site.register(models.Services)
 admin.site.register(models.Projects)
 
 class ContactAdmin(admin.ModelAdmin):
